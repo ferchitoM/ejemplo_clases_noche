@@ -6,12 +6,6 @@ public class Producto {
     public double vUnitario;
     public double porcentajeIva;
 
-    public Producto(){
-        this.descripcion = "";
-        this.vUnitario = 0;
-        this.porcentajeIva = 0;
-    }
-
     public Producto(String descripcion, double vUnitario, double porcentajeIva){
         this.descripcion = descripcion;
         this.vUnitario = vUnitario;

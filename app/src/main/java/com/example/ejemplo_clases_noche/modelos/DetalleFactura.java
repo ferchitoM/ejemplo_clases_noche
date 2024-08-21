@@ -16,19 +16,15 @@ public class DetalleFactura {
         this.vTotal = 0;
     }
 
-    public DetalleFactura(int cantidad, String descripcion, double vUnitario, double iva, double vTotal){
-        this.cantidad = cantidad;
-        this.descripcion = descripcion;
-        this.vUnitario = vUnitario;
-        this.iva = iva;
-        this.vTotal = vTotal;
-    }
+    public void calcularSubtotal(double porcentajeIva){
 
-    public void calcularSubtotal(){
+        double precio = this.vUnitario;
+        this.vUnitario = precio / (1 + (porcentajeIva / 100)); //Subtotal
 
     }
 
-    public void calcularIva(){
+    public void calcularIva(double precio){
 
+        this.iva = precio - this.vUnitario;
     }
 }

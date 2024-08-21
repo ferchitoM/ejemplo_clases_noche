@@ -27,14 +27,18 @@ public class MainActivity extends AppCompatActivity {
 
         facturas = new ArrayList<Factura>();
 
-        int contadorFacturas = 0;
-        contadorFacturas = facturas.size(); //tamaño del arreglo de facturas
+        int contadorFacturas = facturas.size(); //tamaño del arreglo de facturas
 
         Factura f1;
         f1  = new Factura();
-        f1  .agregarProducto(productos.get(0), 1); //1 - Portatil A
+        f1  .setNumeroFactura(contadorFacturas + 1);
+        f1  .agregarProducto(productos.get(0), 1); //Agregar 1 "Portátil A"
+        f1  .agregarProducto(productos.get(1), 1); //Agregar 1 "Portátil B"
+        f1  .calcularValoresFactura(10000);
+        f1  .calcularCambio(4000000, "Efectivo");
 
-
+        //Listamos todos los productos de la factura
+        f1  .mostrarDetalleProducto();
 
     }
 
